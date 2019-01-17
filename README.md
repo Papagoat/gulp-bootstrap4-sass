@@ -1,6 +1,4 @@
-# A basic bootstrap sass boilerplate with gulp.js
-
-This is a basic bootstrap sass boilerplate to get you started on any project. It uses [gulp.js](https://gulpjs.com/) as a task runner.
+# A basic bootstrap 4 sass boilerplate to get you started on any project. It uses [gulp.js](https://gulpjs.com/) as a task runner.
 
 ## Installation
 
@@ -15,7 +13,7 @@ $ npm install gulp -D
 3. CD Into the working directory and install dependencies
 
 ```sh
-$ cd /gulp-bootstrap-sass
+$ cd /gulp-bootstrap4-sass
 $ npm install
 ```
 
