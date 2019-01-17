@@ -69,7 +69,6 @@ function jsCompile() {
   return src(config.paths.js)
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(connect.reload())
     .pipe(dest(config.paths.distJSDir));
 }
 
