@@ -1,0 +1,29 @@
+{
+  "name": "gulp-bootstrap-sass",
+  "version": "1.0.0",
+  "description": "Gulp and Bootstrap Sass Boilerplate",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap-scss": "^4.2.1",
+    "gulp-cache": "^1.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass-partials-imported": "^1.0.7"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-inject": "^5.0.2",
+    "gulp-livereload": "^4.0.1",
+    "gulp-open": "^3.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Terence Lucas Yap",
+  "license": "ISC"
+}
