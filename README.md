@@ -12,9 +12,10 @@ This is a basic bootstrap sass boilerplate to get you started on any project. It
 $ npm install gulp-cli -g
 $ npm install gulp -D
 ```
-3. Install dependencies
+3. CD Into the working directory and install dependencies
 
 ```sh
+$ cd /gulp-bootstrap-sass
 $ npm install
 ```
 
