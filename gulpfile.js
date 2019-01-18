@@ -41,27 +41,24 @@ function clean() {
   return del([config.paths.dist + '*.html', config.paths.distCSSDir + '*.css', config.paths.distJSDir + '*.js']);
 }
 
-// Gulp task to minify CSS styles with clean-css.
-// https://www.npmjs.com/package/gulp-cleancss
-function buildCSS() {
-  return cleanCSS()
-  .pipe(rename({ extname: '.css' }))
-  .pipe(dest(config.paths.distCSSDir));
-}
 
 // Compile Bootstrap SASS
 function bootstrapCompile() {
   return src(bootstrap)
   .pipe(sassPartialsImported(boostrap_dir, boostrap_dir))
   .pipe(cache(sass({ includePaths: boostrap_dir }).on('error', sass.logError)))
-  .pipe(buildCSS());
+  .pipe(cleanCSS())
+  .pipe(rename({ extname: '.css' }))
+  .pipe(dest(config.paths.distCSSDir));
 }
 
 // Compile all SASS files in scss folder
 function sassCompile() {
   return src(config.paths.scss)
   .pipe(cache(sass()))
-  .pipe(buildCSS());
+  .pipe(cleanCSS())
+  .pipe(rename({ extname: '.css' }))
+  .pipe(dest(config.paths.distCSSDir));
 }
 
 // Compile any JS files in JS folder
@@ -114,7 +111,7 @@ function server() {
 function openBrowser() {
   var options = {
     uri: config.devBaseUrl + ':' + config.port + '/',
-    app: 'Google Chrome'
+    // app: 'Google Chrome'
   };
   return src(config.paths.dist + 'index.html')
   .pipe(open(options));
