@@ -1,5 +1,5 @@
 const { watch, series, parallel, src, dest, gulp } = require('gulp');
-const del = require('del'); // Empty folders before commpiling
+const del = require('del'); // Empty folders before compiling
 const uglify = require('gulp-uglify'); // JavaScript Minifier
 const rename = require('gulp-rename'); // Rename files after compile
 const cache = require('gulp-cache'); // A temp file based caching proxy task for gulp.
