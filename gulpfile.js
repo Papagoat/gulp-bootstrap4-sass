@@ -97,13 +97,15 @@ function injectFiles() {
 
 // Gulp plugin to run a webserver (with LiveReload)
 // https://www.npmjs.com/package/gulp-connect
-function server() {
-  return connect.server({
-    root: config.paths.dist,
-    port: config.port,
-    // livereload: true,
-    debug: true,
-  });
+function server(done) {
+  return new Promise(function(resolve, reject) {
+      connect.server({
+        root: config.paths.dist,
+        port: config.port,
+        debug: true,
+      });
+      resolve();
+    });
 }
 
 // Launch Chrome browser
@@ -125,8 +127,12 @@ function buildTasks(done) {
 
 // Watch Task
 // Gulp will watch all on events with a set delay followed by build task.
-function watchTasks() {
-  return watch([config.paths.html, config.paths.scss, config.paths.js], { events: 'all', delay: 200}, buildTasks(), livereload.listen());
+function watchTasks(done) {
+  return new Promise(function(resolve, reject) {
+      watch([config.paths.html, config.paths.scss, config.paths.js], { events: 'all', delay: 200}, buildTasks(), livereload.listen());
+      resolve();
+    });
+  done();
 }
 
 // Clear cached files
